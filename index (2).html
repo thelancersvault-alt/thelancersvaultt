@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TheLancer's Vault — Websites & AI Agents for Small Businesses</title>
+<meta name="description" content="We build high-converting landing pages with AI chatbots for restaurants, salons, gyms, retail shops and real estate agents. Get more customers on autopilot."/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0a0a0a;--card:#111;--mid:#1a1a1a;
+  --green:#00c853;--green-d:#009624;--green-pale:#e8f5e9;
+  --gold:#c9a84c;--white:#fff;--off:#f5f5f0;
+  --text:#ccc;--muted:#666;--border:#222;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--white);letter-spacing:-.5px}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{padding:10px 24px;background:var(--green);color:var(--dark);border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;border-radius:6px;cursor:pointer;transition:background .2s}
+.nav-cta:hover{background:var(--green-d)}
+
+/* HERO */
+.hero{min-height:100vh;padding:140px 60px 80px;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 70% 40%,rgba(0,200,83,.06) 0%,transparent 70%)}
+/* animated grid bg */
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,83,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,83,.04) 1px,transparent 1px);background-size:48px 48px;z-index:0}
+.hero-left{position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,83,.1);border:1px solid rgba(0,200,83,.25);color:var(--green);padding:7px 16px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:1px;margin-bottom:24px}
+.badge-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,200,83,.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(0,200,83,0)}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(40px,5.5vw,72px);font-weight:800;line-height:.95;letter-spacing:-2px;color:var(--white);margin-bottom:22px}
+.hero h1 span{color:var(--green)}
+.hero-sub{font-size:17px;color:var(--text);line-height:1.75;max-width:500px;margin-bottom:36px}
+.hero-sub strong{color:var(--white)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.btn-main{padding:16px 36px;background:var(--green);color:var(--dark);border:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;border-radius:8px;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+.btn-main:hover{background:var(--green-d);transform:translateY(-2px)}
+.btn-ghost{padding:16px 32px;background:transparent;color:var(--white);border:1px solid var(--border);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:400;border-radius:8px;cursor:pointer;transition:all .3s}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
+.trust-item svg{color:var(--green)}
+/* Hero right — mock phone */
+.hero-right{position:relative;z-index:2;display:flex;justify-content:center}
+.phone-mock{width:280px;background:var(--card);border-radius:36px;padding:8px;border:1px solid var(--border);box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 60px rgba(0,200,83,.06);animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.phone-screen{background:#111;border-radius:30px;overflow:hidden}
+.phone-notch{width:80px;height:22px;background:var(--dark);border-radius:0 0 14px 14px;margin:0 auto}
+.phone-content{padding:16px}
+.phone-header{background:var(--green);border-radius:10px;padding:14px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.phone-avatar{width:36px;height:36px;background:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+.phone-chat-info h4{font-size:13px;font-weight:600;color:var(--dark)}
+.phone-chat-info p{font-size:10px;color:rgba(0,0,0,.55)}
+.chat-bubble{border-radius:12px;padding:10px 14px;font-size:12px;line-height:1.5;margin-bottom:8px;max-width:85%}
+.chat-bot{background:#1e1e1e;color:var(--text);border-radius:4px 12px 12px 12px}
+.chat-user{background:var(--green);color:var(--dark);border-radius:12px 4px 12px 12px;margin-left:auto;text-align:right}
+.chat-typing{display:flex;align-items:center;gap:4px;padding:10px 14px;background:#1e1e1e;border-radius:4px 12px 12px 12px;width:fit-content}
+.chat-typing span{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:typing 1.2s ease infinite}
+.chat-typing span:nth-child(2){animation-delay:.2s}
+.chat-typing span:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.phone-input{display:flex;align-items:center;gap:8px;margin-top:12px;background:#1e1e1e;border-radius:20px;padding:8px 14px}
+.phone-input span{font-size:11px;color:var(--muted);flex:1}
+.phone-input-btn{width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+
+/* STATS STRIP */
+.stats-strip{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:36px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat-item{text-align:center;padding:0 20px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;color:var(--green);line-height:1}
+.stat-label{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+/* WHO WE SERVE */
+.niches{padding:100px 60px;background:var(--dark)}
+.section-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';width:20px;height:2px;background:var(--green);border-radius:2px}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1;margin-bottom:48px}
+.niches-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.niche-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 22px;transition:all .35s;cursor:default;position:relative;overflow:hidden}
+.niche-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,200,83,.06),transparent);opacity:0;transition:opacity .35s}
+.niche-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.niche-card:hover::before{opacity:1}
+.niche-icon{font-size:36px;margin-bottom:14px}
+.niche-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.niche-desc{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* WHAT WE BUILD */
+.services{padding:100px 60px;background:var(--mid)}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:52px}
+.svc-card{background:var(--card);padding:48px 40px;transition:background .3s;position:relative;overflow:hidden}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-num{font-family:'Syne',sans-serif;font-size:64px;font-weight:800;color:rgba(255,255,255,.04);line-height:1;margin-bottom:16px}
+.svc-icon{font-size:36px;margin-bottom:16px}
+.svc-name{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.svc-desc{font-size:14px;color:var(--text);line-height:1.8;margin-bottom:20px}
+.svc-features{list-style:none;display:flex;flex-direction:column;gap:8px}
+.svc-features li{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.svc-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+/* HOW IT WORKS */
+.process{padding:100px 60px;background:var(--dark)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
+.process-steps::before{content:'';position:absolute;top:36px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,var(--green),var(--green-d));z-index:0}
+.step{text-align:center;padding:0 20px;position:relative;z-index:1}
+.step-num{width:72px;height:72px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--dark);margin:0 auto 20px;border:4px solid var(--dark)}
+.step-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* PRICING */
+.pricing{padding:100px 60px;background:var(--mid)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;position:relative;transition:all .3s;display:flex;flex-direction:column}
+.price-card.featured{border-color:var(--green);box-shadow:0 0 60px rgba(0,200,83,.1)}
+.price-card:not(.featured):hover{border-color:rgba(0,200,83,.4);transform:translateY(-4px)}
+.price-pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--dark);font-size:11px;font-weight:600;letter-spacing:2px;padding:5px 18px;border-radius:100px;white-space:nowrap}
+.price-tier{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.price-amount{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;color:var(--white);line-height:1;margin-bottom:4px}
+.price-amount sup{font-size:24px;vertical-align:top;margin-top:10px;display:inline-block}
+.price-period{font-size:13px;color:var(--muted);margin-bottom:24px}
+.price-divider{height:1px;background:var(--border);margin-bottom:24px}
+.price-features{display:flex;flex-direction:column;gap:12px;flex:1;margin-bottom:28px}
+.price-feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text)}
+.price-feat svg{color:var(--green);flex-shrink:0;margin-top:2px}
+.price-btn{width:100%;padding:14px;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;text-align:center}
+.price-btn-green{background:var(--green);color:var(--dark)}
+.price-btn-green:hover{background:var(--green-d)}
+.price-btn-outline{background:transparent;color:var(--white);border:1px solid var(--border)}
+.price-btn-outline:hover{border-color:var(--green);color:var(--green)}
+
+/* TESTIMONIALS */
+.testimonials{padding:100px 60px;background:var(--dark)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;transition:all .3s}
+.testi-card:hover{border-color:rgba(0,200,83,.3);transform:translateY(-3px)}
+.testi-stars{color:var(--gold);font-size:14px;margin-bottom:14px}
+.testi-text{font-size:14px;color:var(--text);line-height:1.8;font-style:italic;margin-bottom:20px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--mid);display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--border)}
+.testi-name{font-size:14px;font-weight:500;color:var(--white)}
+.testi-biz{font-size:12px;color:var(--muted)}
+
+/* CTA SECTION */
+.cta-section{padding:120px 60px;background:var(--green);position:relative;overflow:hidden;text-align:center}
+.cta-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.12),transparent)}
+.cta-section h2{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,68px);font-weight:800;letter-spacing:-2px;color:var(--dark);margin-bottom:16px;position:relative}
+.cta-section p{font-size:17px;color:rgba(0,0,0,.6);margin-bottom:40px;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-dark{padding:16px 40px;background:var(--dark);color:var(--white);border:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;border-radius:8px;cursor:pointer;transition:all .3s}
+.btn-dark:hover{background:#111;transform:translateY(-2px)}
+.btn-white{padding:16px 36px;background:var(--white);color:var(--dark);border:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;border-radius:8px;cursor:pointer;transition:all .3s}
+.btn-white:hover{background:var(--off);transform:translateY(-2px)}
+
+/* CONTACT FORM */
+.contact{padding:100px 60px;background:var(--mid)}
+.contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.contact-info h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1}
+.contact-info p{font-size:15px;color:var(--text);line-height:1.8;margin-bottom:28px}
+.contact-details{display:flex;flex-direction:column;gap:16px}
+.contact-detail .label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.contact-detail .value{font-size:15px;color:var(--white)}
+.contact-detail .value a{color:var(--green);text-decoration:none}
+.ev-form{display:flex;flex-direction:column;gap:18px}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.fg input,.fg select,.fg textarea{background:var(--card);border:1px solid var(--border);padding:13px 16px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--white);outline:none;transition:border-color .2s;resize:none;appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--green)}
+.fg select option{background:var(--card)}
+.fg textarea{min-height:90px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-btn{padding:16px;background:var(--green);color:var(--dark);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px}
+.form-btn:hover{background:var(--green-d);transform:translateY(-2px)}
+.form-success{display:none;background:rgba(0,200,83,.1);border:1px solid rgba(0,200,83,.3);border-radius:8px;padding:16px;font-size:13px;color:var(--green);margin-top:8px}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:60px 60px 28px}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;margin-bottom:48px}
+.footer-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:12px}
+.footer-logo span{color:var(--green)}
+.footer-tagline{font-size:13px;color:var(--muted);line-height:1.7;max-width:260px}
+.footer-col h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:var(--muted)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .niches-grid{grid-template-columns:repeat(3,1fr)}
+  .pricing-grid,.services-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .process-steps::before{display:none}
+  .contact-inner{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:120px 20px 60px;gap:40px}
+  .hero-right{display:none}
+  .stats-strip{grid-template-columns:1fr 1fr;padding:28px 20px}
+  .niches,.services,.process,.pricing,.testimonials,.contact,footer{padding-left:20px;padding-right:20px}
+  .niches-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TheLancer's<span>Vault</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#testimonials">Results</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started Free</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span class="badge-dot"></span> Now accepting new clients</div>
+    <h1>Your Business.<br>Online. <span>Selling.</span><br>24/7.</h1>
+    <p class="hero-sub">We build <strong>high-converting landing pages</strong> with <strong>AI chatbots</strong> that answer questions, capture leads, and book clients — even while you sleep. Perfect for restaurants, salons, gyms, shops & more.</p>
+    <div class="hero-ctas">
+      <button class="btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Get My Free Website
+      </button>
+      <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>No tech skills needed</div>
+      <div class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Live in 5 days</div>
+      <div class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>100% satisfaction guarantee</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="phone-mock">
+      <div class="phone-screen">
+        <div class="phone-notch"></div>
+        <div class="phone-content">
+          <div class="phone-header">
+            <div class="phone-avatar">🤖</div>
+            <div class="phone-chat-info">
+              <h4>Aria — AI Assistant</h4>
+              <p>● Online now</p>
+            </div>
+          </div>
+          <div class="chat-bubble chat-bot">Hi! Welcome to Rose & Co. Salon 👋 How can I help you today?</div>
+          <div class="chat-bubble chat-user">Do you have any slots tomorrow?</div>
+          <div class="chat-bubble chat-bot">Yes! We have openings at <b>10am, 2pm & 4:30pm</b> tomorrow. Which works best for you? 💅</div>
+          <div class="chat-bubble chat-user">2pm please!</div>
+          <div class="chat-typing"><span></span><span></span><span></span></div>
+          <div class="phone-input">
+            <span>Type a message…</span>
+            <div class="phone-input-btn">↑</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-num">150+</div><div class="stat-label">Sites Delivered</div></div>
+  <div class="stat-item"><div class="stat-num">5 Days</div><div class="stat-label">Average Turnaround</div></div>
+  <div class="stat-item"><div class="stat-num">3×</div><div class="stat-label">More Leads on Average</div></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI Works For You</div></div>
+</div>
+
+<!-- WHO WE SERVE -->
+<section class="niches" id="niches">
+  <div class="reveal">
+    <div class="section-label">Who We Help</div>
+    <h2 class="section-title">Built for Every<br>Local Business</h2>
+  </div>
+  <div class="niches-grid">
+    <div class="niche-card reveal" style="transition-delay:.05s">
+      <div class="niche-icon">🍽️</div>
+      <div class="niche-name">Restaurants & Cafés</div>
+      <div class="niche-desc">Online menu, table reservations, takeaway orders — all automated.</div>
+    </div>
+    <div class="niche-card reveal" style="transition-delay:.1s">
+      <div class="niche-icon">💇</div>
+      <div class="niche-name">Salons & Barbershops</div>
+      <div class="niche-desc">AI books appointments 24/7. No more missed calls or DMs.</div>
+    </div>
+    <div class="niche-card reveal" style="transition-delay:.15s">
+      <div class="niche-icon">🛍️</div>
+      <div class="niche-name">Retail & Local Shops</div>
+      <div class="niche-desc">Showcase products, drive foot traffic, and collect customer contacts.</div>
+    </div>
+    <div class="niche-card reveal" style="transition-delay:.2s">
+      <div class="niche-icon">💪</div>
+      <div class="niche-name">Gyms & Fitness</div>
+      <div class="niche-desc">Class schedules, membership enquiries, and free trial sign-ups on autopilot.</div>
+    </div>
+    <div class="niche-card reveal" style="transition-delay:.25s">
+      <div class="niche-icon">🏠</div>
+      <div class="niche-name">Real Estate Agents</div>
+      <div class="niche-desc">Listings, lead capture forms, and instant AI responses to buyer questions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section class="services" id="services">
+  <div class="reveal">
+    <div class="section-label">What You Get</div>
+    <h2 class="section-title">Two Powerful Tools.<br>One Affordable Package.</h2>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-num">01</div>
+      <div class="svc-icon">🌐</div>
+      <div class="svc-name">High-Converting Landing Page</div>
+      <p class="svc-desc">A stunning, mobile-first website built specifically to turn visitors into paying customers. Not just pretty — strategically designed to sell.</p>
+      <ul class="svc-features">
+        <li>Custom design matching your brand</li>
+        <li>Mobile-first & lightning fast</li>
+        <li>Lead capture forms & CTAs</li>
+        <li>Google Maps & contact integration</li>
+        <li>SEO-optimised from day one</li>
+        <li>SSL secured & GDPR compliant</li>
+      </ul>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:.1s">
+      <div class="svc-num">02</div>
+      <div class="svc-icon">🤖</div>
+      <div class="svc-name">AI Sales Agent / Chatbot</div>
+      <p class="svc-desc">A smart AI assistant trained specifically on your business — your menu, your services, your prices, your hours. It answers, engages, and converts 24/7.</p>
+      <ul class="svc-features">
+        <li>Trained on your business details</li>
+        <li>Answers questions instantly</li>
+        <li>Books appointments automatically</li>
+        <li>Captures leads & emails</li>
+        <li>Escalates to you when needed</li>
+        <li>Works while you sleep</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="reveal">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Live in 5 Days.<br>Zero Hassle.</h2>
+  </div>
+  <div class="process-steps">
+    <div class="step reveal" style="transition-delay:.05s">
+      <div class="step-num">1</div>
+      <div class="step-title">Discovery Call</div>
+      <div class="step-desc">We learn your business, your goals, and what your customers need most.</div>
+    </div>
+    <div class="step reveal" style="transition-delay:.1s">
+      <div class="step-num">2</div>
+      <div class="step-title">We Build</div>
+      <div class="step-desc">Our team designs and builds your site and trains your AI chatbot — you do nothing.</div>
+    </div>
+    <div class="step reveal" style="transition-delay:.15s">
+      <div class="step-num">3</div>
+      <div class="step-title">You Review</div>
+      <div class="step-desc">We share a preview. You request any changes. Unlimited revisions until you love it.</div>
+    </div>
+    <div class="step reveal" style="transition-delay:.2s">
+      <div class="step-num">4</div>
+      <div class="step-title">Go Live 🚀</div>
+      <div class="step-desc">Your site goes live. Your AI starts working. Leads start coming in.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="reveal">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, Transparent<br>Pricing.</h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="price-tier">Starter</div>
+      <div class="price-amount"><sup>$</sup>149</div>
+      <div class="price-period">One-time · No hidden fees</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>1-page landing page</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Mobile responsive design</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Basic contact form</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Google Maps embed</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>3 revisions</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Delivered in 3 days</li>
+      </ul>
+      <button class="price-btn price-btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+    </div>
+    <div class="price-card featured reveal" style="transition-delay:.08s">
+      <div class="price-pop">Most Popular</div>
+      <div class="price-tier">Growth</div>
+      <div class="price-amount"><sup>$</sup>349</div>
+      <div class="price-period">One-time · Everything included</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Full landing page (up to 5 sections)</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg><b>AI chatbot — trained on your biz</b></li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Lead capture & email collection</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>WhatsApp integration</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>SEO optimised</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Unlimited revisions</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Delivered in 5 days</li>
+      </ul>
+      <button class="price-btn price-btn-green" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+    </div>
+    <div class="price-card reveal" style="transition-delay:.15s">
+      <div class="price-tier">Premium</div>
+      <div class="price-amount"><sup>$</sup>599</div>
+      <div class="price-period">One-time · Full package</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Multi-page full website</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Advanced AI agent + booking system</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Payment integration</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Social media links + setup</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>1 month post-launch support</li>
+        <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/></svg>Priority delivery in 5 days</li>
+      </ul>
+      <button class="price-btn price-btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="reveal">
+    <div class="section-label">Client Results</div>
+    <h2 class="section-title">Real Businesses.<br>Real Results.</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal" style="transition-delay:.05s">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Before this I had zero online presence. Within 2 weeks of going live my phone didn't stop ringing. The AI chatbot books appointments even at midnight!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">💇</div>
+        <div><div class="testi-name">Marcus D.</div><div class="testi-biz">The Cut Barbershop — London</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:.1s">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"My restaurant reservations went up 40% in the first month. Customers can see our menu, book a table, and the AI answers their questions instantly. Best money I ever spent."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">🍽️</div>
+        <div><div class="testi-name">Priya S.</div><div class="testi-biz">Spice Garden Restaurant — Birmingham</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:.15s">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"As a personal trainer I was losing clients because I couldn't respond to enquiries fast enough. Now the AI handles everything and I just show up to train. Brilliant."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">💪</div>
+        <div><div class="testi-name">James K.</div><div class="testi-biz">Peak Performance PT — Manchester</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-section">
+  <h2>Stop Losing Customers<br>to Competitors with Websites.</h2>
+  <p>Your next customer is searching for you right now. Are they finding you — or someone else?</p>
+  <div class="cta-btns">
+    <button class="btn-dark" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get My Free Website Today</button>
+    <button class="btn-white" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">View Pricing</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2>Let's Build Your<br>Online Presence</h2>
+      <p>Fill in the form and I'll get back to you within 24 hours with a free consultation and a custom plan for your business.</p>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="label">WhatsApp</div>
+          <div class="value"><a href="https://wa.me/15813912850">+1 (581) 391-2850</a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Email</div>
+          <div class="value"><a href="/cdn-cgi/l/email-protection#e6928e838a8788858394959087938a92a6818b878f8ac885898b"><span class="__cf_email__" data-cfemail="88fce0ede4e9e6ebedfafbfee9fde4fcc8efe5e9e1e4a6ebe7e5">[email&#160;protected]</span></a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Fiverr</div>
+          <div class="value"><a href="https://www.fiverr.com/s/0bLpK3q" target="_blank">fiverr.com/s/0bLpK3q</a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Response Time</div>
+          <div class="value">Within 24 hours — usually much faster</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.1s">
+      <form class="ev-form" onsubmit="submitForm(event)">
+        <div class="frow">
+          <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required/></div>
+          <div class="fg"><label>Business Name</label><input type="text" placeholder="Joe's Café" required/></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="john@business.com" required/></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+1 234 567 8900"/></div>
+        <div class="fg"><label>Business Type</label>
+          <select required>
+            <option value="">Select your business type…</option>
+            <option>Restaurant / Café</option>
+            <option>Salon / Barbershop</option>
+            <option>Retail / Local Shop</option>
+            <option>Gym / Fitness</option>
+            <option>Real Estate Agent</option>
+            <option>Other Small Business</option>
+          </select>
+        </div>
+        <div class="fg"><label>Package Interest</label>
+          <select>
+            <option>Growth — $349 (Landing Page + AI Chatbot)</option>
+            <option>Starter — $149 (Landing Page Only)</option>
+            <option>Premium — $599 (Full Website + Advanced AI)</option>
+            <option>Not sure — help me decide</option>
+          </select>
+        </div>
+        <div class="fg"><label>Tell Me About Your Business</label>
+          <textarea placeholder="What does your business do? What's your main goal — more bookings, more foot traffic, more leads?"></textarea>
+        </div>
+        <button type="submit" class="form-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Send My Enquiry — It's Free
+        </button>
+        <div class="form-success" id="formSuccess">
+          ✅ Message received! I'll be in touch within 24 hours with your free consultation.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">TheLancer's<span>Vault</span></div>
+      <p class="footer-tagline">Websites and AI agents for small businesses. Helping local businesses get found, get leads, and grow.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Landing Pages</a></li>
+        <li><a href="#services">AI Chatbots</a></li>
+        <li><a href="#niches">Restaurants</a></li>
+        <li><a href="#niches">Salons & Barbershops</a></li>
+        <li><a href="#niches">Gyms & Fitness</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <ul>
+        <li><a href="https://wa.me/15813912850">WhatsApp</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#0c786469606d626f697e7f7a6d7960784c6b616d6560226f6361">Email</a></li>
+        <li><a href="https://www.fiverr.com/s/0bLpK3q" target="_blank">Fiverr Profile</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Free Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 TheLancer's Vault. All rights reserved.</span>
+    <span class="footer-copy"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f2b373a333e313c3a2d2c293e2a332b1f38323e3633713c3032">[email&#160;protected]</a></span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Form submit
+function submitForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-btn');
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  setTimeout(() => {
+    document.getElementById('formSuccess').style.display = 'block';
+    btn.textContent = 'Sent ✓';
+    e.target.querySelectorAll('input,select,textarea').forEach(f => f.disabled = true);
+  }, 900);
+}
+
+// Animate stats counter
+function animateCount(el, target, suffix='') {
+  let current = 0;
+  const step = target / 60;
+  const timer = setInterval(() => {
+    current += step;
+    if(current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current) + suffix;
+  }, 25);
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isInter
